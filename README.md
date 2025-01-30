@@ -5,10 +5,10 @@ Teste de API Rest do manual a CI/CD
 Este repositório foi criado Teste de API Rest.
 
 ## Tecnologias utilizadas
-Postman versão web
-node version v20.17.0
-newman v6.2.1
-newman-reporter-html
+- Postman versão web
+- node version v20.17.0
+- newman v6.2.1
+- newman-reporter-html
 ## Documentações
 Analise Técnica: Analise/
 Doc da API: Consulte Swagger
