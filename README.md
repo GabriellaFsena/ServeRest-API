@@ -2,12 +2,12 @@
 Teste de API Rest do manual a CI/CD
 
 ## O que é
-Este repositório foi criado para o bootcamp de Teste de API Rest.
+Este repositório foi criado Teste de API Rest.
 
 ## Tecnologias utilizadas
 Postman versão web
-node version v18.16.1
-newman v5.3.2
+node version v20.17.0
+newman v6.2.1
 newman-reporter-html
 ## Documentações
 Analise Técnica: Analise/
@@ -25,7 +25,7 @@ npm install -g newman-reporter-html
 ## Pelo newman
 - Abra o console de preferência
 - Execute a seguinte linha de comando para rodar os testes
-- newman run ServeRest.postman_collection.json -e serveRest_env.postman_environment.json -r cli
+- newman run ServeRest.postman_collection.json -e ServeRest.postman_environment.json -r cli
 - Execute os teste com relatório
 - newman run ServeRest.postman_collection.json -e serveRest_env.postman_environment.json -r cli,htmlextra
 ## Report
