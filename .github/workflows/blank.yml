@@ -1,0 +1,39 @@
+name: Newman Run
+
+on:
+  push:
+    branches:
+      - main
+      
+jobs:
+  newman:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Create directory for reports
+        run: mkdir -p testArtifacts
+
+      - name: Clear npm cache
+        run: npm cache clean --force
+
+      - name: Install Newman and dependencies
+        run: |
+          npm install -g newman@latest
+          npm install -g newman-reporter-htmlextra@latest
+
+      - name: Check installed versions
+        run: |
+          newman --version
+          npm list -g --depth=0
+
+      - name: Run Postman Tests
+        run: newman run ServeRest.postman_collection.json -e ServeRest.postman_environment.json -r cli,htmlextra --reporter-htmlextra-export testArtifacts/report.html
+
+      - name: Upload Newman Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: newman-report
+          path: testArtifacts
